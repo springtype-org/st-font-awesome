@@ -10286,10 +10286,10 @@ split-string@^3.0.1, split-string@^3.0.2:
   dependencies:
     extend-shallow "^3.0.0"
 
-springtype@^2.0.0-beta.11:
-  version "2.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/springtype/-/springtype-2.0.0-beta.11.tgz#c8b464af418cd8e1b892b07ed7b0c01163bff808"
-  integrity sha512-SQz7eQ9YJpxhZu1FBI9IwH1ShVGylGnS3ZDfKzXUIQ75dQFt8amQVlnHgM0TWGsSmiE2PchoUDuITCjVlkLFVQ==
+springtype@^2.0.0-beta.12:
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/springtype/-/springtype-2.0.0-beta.12.tgz#9761d1a98df0bb517dba0bf86526895fe56ff764"
+  integrity sha512-O/IyF8bJyR7J/6mxnvd1B5T0RQAwLC2bMpbmdaLdNmfX4MNHThuVFCPqHa9oHAwwC6BIKLVzCkJaULcCOEskyw==
   dependencies:
     global "^4.4.0"
     st-cp "^2.0.0-alpha.4"

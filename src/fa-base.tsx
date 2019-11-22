@@ -128,8 +128,6 @@ export class FABase<IFABaseSuperAttrs = {}> extends st.component<IFABaseAttrs & 
         if (this.size) {
             classes.push(`fa-${this.size}`);
         }
-
-        console.log('base add classes', classes)
         this.elClass = classes;
     }
 

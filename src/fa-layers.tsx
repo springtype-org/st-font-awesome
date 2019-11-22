@@ -22,7 +22,6 @@ export class FALayers extends FABase<IFALayersAttrs> {
         if (this.fw) {
             classes.push('fa-fw');
         }
-        console.log('FALAyers', classes);
         this.elClass = classes;
     }
 
