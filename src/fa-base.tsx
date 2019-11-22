@@ -1,8 +1,9 @@
 import { st } from "springtype/core";
 import { component, attr } from "springtype/web/component";
+import { SizeProp } from "@fortawesome/fontawesome-svg-core";
 
 export type VertialAlignTypes = 'top' | 'middle' | 'bottom';
-export type FASizes = 'xs' | 'sm' | 'lg' | '2x' | '3x' | '5x' | '7x' | '10x';
+export type FASizes = SizeProp | 'block';
 
 export interface IFABaseAttrs {
     fontSize?: string;
@@ -104,13 +105,17 @@ export class FABase<IFABaseSuperAttrs = {}> extends st.component<IFABaseAttrs & 
             style['background'] = this.background;
         }
 
+        const attrs = {};
+
         if (this.transform) {
-            style['data-fa-transform'] = this.transform.join(' ');
+            attrs['data-fa-transform'] = this.transform.join(' ');
         }
 
         if (this.mask) {
-            style['data-fa-mask'] = this.mask.join(' ');
+            attrs['data-fa-mask'] = this.mask.join(' ');
         }
+
+        this.elAttributes = attrs;
 
         this.elStyle = style;
 
@@ -123,6 +128,8 @@ export class FABase<IFABaseSuperAttrs = {}> extends st.component<IFABaseAttrs & 
         if (this.size) {
             classes.push(`fa-${this.size}`);
         }
+
+        console.log('base add classes', classes)
         this.elClass = classes;
     }
 

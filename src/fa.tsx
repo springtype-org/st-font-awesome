@@ -1,10 +1,11 @@
 import { component, attr } from "springtype/web/component";
 import { FABase } from "./fa-base";
+import { IconName} from "@fortawesome/fontawesome-svg-core";
 
 export type StackSizes = '1x' | '2x';
 
 export interface IFAAttrs {
-    icon?: string;
+    icon?: IconName;
     duotone?: boolean;
     swapOpacity?: boolean;
     rotate90?: boolean;
@@ -77,7 +78,7 @@ export class FA extends FABase<IFAAttrs> {
 
         super.onAfterElCreate();
 
-        const classes = [...this.elClass, this.duotone ? 'fad' : 'fas', `fa-${this.icon}`];
+        const classes = [this.duotone ? 'fad' : 'fas', `fa-${this.icon}`, ...this.elClass];
 
         if (this.swapOpacity) {
             classes.push('fa-swap-opacity');

@@ -16,6 +16,9 @@ Include the CSS from a CDN or locally:
   <!-- add Font Awesome icon support -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 
+  <!-- in case of the need of advanced features like Power Transforms, include the JS library as well -->
+  <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
+
 </head>
 ```
 
@@ -27,6 +30,62 @@ import { FA } from 'st-font-awesome';
 
 st.render(<FA icon="plus" />);
 ```
+
+<h2 align="center">API</h2>
+
+There is full support for all Font Awesome features including Sizing, Fixed-Width, Icons in a List, Rotation, Animation, Borders, Pulled Icons, Stacking, Power Transforms, Masking, Layering, Texts, Counters and Duotone Icons:
+
+The following components are implemented:
+
+- [x] `FA`
+- [x] `FALayers`
+- [x] `FALayersCounter`
+- [x] `FALayersText`
+- [x] `FALayers`
+- [x] `FAStack` (legacy stacking support, use layers)
+
+Options available:
+
+```ts
+// for <FA icon="plus" ... />
+interface IFAAttrs {
+    icon?: IconName;
+    duotone?: boolean;
+    swapOpacity?: boolean;
+    rotate90?: boolean;
+    rotate180?: boolean;
+    rotate270?: boolean;
+    flipHorizontal?: boolean;
+    flipVertical?: boolean;
+    flipBoth?: boolean;
+    animateSpin?: boolean;
+    animatePulse?: boolean;
+    pullRight?: boolean;
+    pullLeft?: boolean;
+    border?: boolean;
+    inverse?: boolean;
+    stack?: StackSizes;
+}
+```
+
+For example, layering and stacking like this:
+
+```ts
+import { st } from 'springtype/core';
+import { tsx } from 'springtype/web/vdom';
+import { FA, FALayers, FALayersCounter } from 'st-font-awesome';
+
+st.render(
+    <FALayers size="4x">
+        <FA icon="envelope" />
+        <FALayersCounter color="orange">20</FALayersCounter>
+    </FALayers>
+);
+```
+
+...results in: 
+
+<img src="dom.png" height="150px" />
 
 <h2 align="center">Maintainers</h2>
 
